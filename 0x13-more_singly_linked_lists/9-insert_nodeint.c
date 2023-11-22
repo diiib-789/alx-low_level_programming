@@ -10,7 +10,7 @@
  * Return: the new node, or NULL if it doesn't exists
  */
 
-listint_t	*insert_nodeint_at_index(listint_t **head, unsigned int x, int b)
+listint_t	*insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	unsigned int i = 0;
 	listint_t *new = NULL, *tmp;
@@ -20,18 +20,18 @@ listint_t	*insert_nodeint_at_index(listint_t **head, unsigned int x, int b)
 		new = malloc(sizeof(listint_t));
 		if (new)
 		{
-			new->n = b;
+			new->n = n;
 			new->next = NULL;
 			tmp = *head;
 
-			if (x == 0)
+			if (idx == 0)
 			{
 				new->next = *head;
 				*head = new;
 			}
 			else
 			{
-				while (i != x - 1 && tmp)
+				while (i != idx - 1 && tmp)
 				{
 					tmp = tmp->next;
 					i++;

@@ -9,14 +9,14 @@
  * Return: a pointer to the new node
  */
 
-listint_t	*add_nodeint(listint_t **head, const int b)
+listint_t	*add_nodeint(listint_t **head, const int n)
 {
 	listint_t *node = NULL;
 
 	node = malloc(sizeof(listint_t));
 	if (node)
 	{
-		node->n = b;
+		node->n = n;
 		node->next = *head;
 		*head = node;
 	}
